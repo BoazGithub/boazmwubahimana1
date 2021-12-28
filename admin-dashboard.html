@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin dashboard</title>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    <script src="https://kit.fontawesome.com/e4761ce9e4.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+   <div class="wrapper">
+        <div class="nav-menu">
+            <div class="logo">
+              <a href="boaz.html"><h3><span>B</span>o <span>a</span>z <span></span></h3></a>
+            </div>
+         
+            <div class="account">
+                <img src="boaz" alt=""> <span>Boaz</span>  <a href="#" id="logout">Log Out</a>
+            </div>
+            <div class="menu-bar">+</div>
+        </div>
+
+                <div class="container">
+                    <div class="user-profile-l">
+                        <ul class="navs">
+                            <li class="active" id="check"><a href="#" >Contacted</a></li>    
+                            <li><a href="#">Blogs</a></li>
+                            <li><a href="#">My Account</a></li>
+                            <li><a href="#">Skills</a></li>
+                            <li><a href="#">Projects</a></li>
+                            <li id="logout">Logout</li>
+                        </ul>
+                        
+                    </div>
+            
+               <div class="content active" data-index="0">
+                   <div class="contact"></div>
+               </div>
+
+               
+
+
+       <div class="content" data-index="1">
+            <div class="blog"></div>
+                
+        </div>
+
+        <div class="content" data-index="2">
+                <div class="main-content-account">
+                    <div class="profile">
+                        <!-- <img src="../img/ami.png" alt=""> -->
+                        
+                    </div>
+                    <div class="update">
+                        <h2>Update Your Infomation</h2>
+                        <form id="profileInfoForm" >
+                            <input type="text" name="name" value="Boaz"><br><br>
+                            <input type="text" name="role" value="Admin"><br><br>
+                            <input type="text" name="email" value="mwubahimanaboaz800gmail.com"><br><br>
+                            <button type="submit">Update</button>
+                        </form>
+                    </div>
+                   </div>
+        </div>
+
+               <div class="content" data-index="3">
+                   <div class="add">
+                       
+                       <span><i class="fas fa-plus"></i> Add New</span>
+                   </div>
+                    <div class="blo-skill">
+                                <div class="description-skill">
+                                    <!-- <div class="flexbox-skill-item">
+                                        <img src="../img/html.png" alt="img">
+                                        <p>HTML</p> 
+                                        <span><i class="fas fa-trash-alt" id="delete"></i></span>
+                                        <span><i class="fas fa-pen-alt" id="update"></i></span>
+                                    </div>
+                                    -->
+                    
+                                </div>
+                    </div>
+                </div>
+
+
+
+                <div class="content" data-index="4">
+                    <div class="add-project">
+                        <span><i class="fas fa-plus"></i> Add New</span>
+                    </div>
+                    <div class="projec">
+                                    
+                            <!-- <div class="flexbox-pro-item">
+                                <img src="../img/politico.PNG" alt="img">
+                                <a href=""><h3>Politico Project</h3></a>
+                                <p>It is a platform which both the politicians and citizens can use. Politico enables citizens to give their mandate to politicians running for different government offices while building trust in the process through transparency</p> 
+                                <span><i class="fas fa-trash-alt" id="deletepro"></i></span>
+                                <span><i class="fas fa-pen-alt" id="updatepro"></i></span>
+                            </div>
+                          -->
+ 
+                    </div>
+                </div>
+
+               
+    </div>
+   </div>
+
+   <div class="login-modal">
+    <div class="modal-content">
+        <div class="close">+</div>
+        <h2>Update Project</h2>
+        <form class="editProjectForm" ></form>
+        <form class="editProjectFormText" ></form>
+    </div>
+    
+</div>
+
+
+<div class="skill-modal">
+    <div class="modal-content">
+        <div class="sclose">+</div>
+        <h2>Update Skill</h2>
+        <form id="updateSkillsFormImage"></form>
+        <form id="updateSkillsForm"></form>
+    </div>
+    
+</div>
+
+
+
+<div class="add-skill-modal">
+    <div class="reset">
+        <!-- <div class="modal-content"> -->
+            <div class="skclose">+</div>
+              <h2>Add Skill</h2>
+
+                <form action="" method="POST" id="add-skills-form">
+                    <div class="input">
+                        <div>
+                            <label for="logo">Image:</label><br>
+                            <input type="file" name="file" class="focused" id="image-skills-field" required><br><br>
+                        </div>
+                        <div>
+                            <label for="logo"> Name:</label><br>
+                            <input type="text" id="skill-add" name="skill" class="focused" required value=""><br><br>                        </div>
+                        </div>
+                        <button id="idbtn" type="submit">UPLOAD</button>
+                    </div>
+                    
+                </form>
+
+        <!-- </div> -->
+    </div>
+    
+</div>
+
+
+<div class="add-project-modal">
+    <div class="reset">
+        <!-- <div class="modal-content"> -->
+            <div class="kclose">+</div>
+            <h2>Add Project</h2>
+
+            <form action="" method="POST" id="project-form">
+                    
+                <div class="input">
+                    <div>
+                        <label for="logo">title:</label><br>
+                        <input type="text" id="project-title" class="focused" required><br><br>
+                    </div>
+                    <div>
+                        <label for="logo">Image:</label><br>
+                        <input type="file"  class="focused" id="project-image" required><br><br>
+                    </div>
+                    <div>
+                        <label for="logo"> Descriptions:</label><br>
+                        <textarea rows="10"  class="focused" id="project-descript" required></textarea>  <br><br>
+                    </div>
+
+                    <button type="submit">UPLOAD</button>
+                </div>
+                
+            </form>
+
+        <!-- </div> -->
+    </div>
+    
+</div>
+<!-- <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-auth.js"></script>
+    <script src="../scripts/firebase/firebaseConfig.js"></script>
+   -->
+   
+    <script type="text/javascript" src="dash.js"></script>
+   <!-- <script src="../scripts/firebase/admin-dashboard-firebase.js"></script> -->
+</body>
+</html>

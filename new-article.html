@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/e4761ce9e4.js" crossorigin="anonymous"></script>
+
+    <!-- <link rel="stylesheet" href="../CSS/blogs.css"> -->
+    <link rel="stylesheet" href="blogs.css">
+    <title>My blogs</title>
+</head>
+<body>
+    <!-- header section -->
+    <section id="header">
+    <div class="header container">
+        <div class="nav-bar">
+            <div class="brand"> <h1> <a href="boaz.html"> <span>Boa</span>z</a></h1> </div>
+            <div class="nav-list">
+                <div class="hamburger"> <div class="bar"></div></div>
+                <ul>
+                    <li><a href="boaz.html">Home</a></li>
+                    <li><a href="blogs.html">Blog</a></li>
+                    <li><a href="new-article.html" id="new-article" class="active_link">New Article</a></li>
+                    <li><a href="admin-dashboard.html" id="admin-dash">Dashboard</a></li>
+                    
+                </ul>
+
+            </div>
+       </div>
+    </div>
+    </section>
+    <!-- end of header section -->
+
+    
+    
+    <div class="article-modal">
+        <div class="image">
+            <img src="undraw_sharing_articles_t5aa.png" alt="image">
+        </div>
+        <div class="article-modal-content">
+            <!-- <div class="close">+</div> -->
+            <h2> New article</h2>
+            <form id="articleForm" method="POST">
+                <div >
+                    <h4 class="name"><i class="fas fa-user"></i>Title:</h4>
+                   <input type="text" name="name" id="name" class="focused" required><br>
+                </div>
+                <div>
+                    <h4><i class="fas fa-image"></i>Article Image:</h4>
+                    <input type="file" name="file" id="file" class="focused" required><br>
+                </div>
+                <div>
+                    <h4><i class="fal fa-text-size"></i> Description:</h4>
+                  <textarea required rows="12" id="content" class="focused" name="content"></textarea>
+                </div>
+                <button type="submit" class="button" id="btnart">SUBMIT</button>
+            </form>
+        </div>
+        
+    </div>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-storage.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-auth.js"></script>
+
+<script src="../scripts/firebase/firebaseConfig.js"></script>
+
+<script type="text/javascript" src="blogs.js"></script>
+<script src="landingPage.js"></script>
+<script src="newArticle.js"></script>
+<script src="../scripts/firebase/firebase.js"></script>
+     <!-- <script src="../scripts/firebase/singleBlogFire.js"></script> -->
+<script src="../scripts/ckeditor/ckeditor.js" ></script>
+<script>
+    CKEDITOR.replace('content')
+</script>
+</body>
+</html>

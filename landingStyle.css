@@ -1,0 +1,2256 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background: #e0e0e0;
+}
+html{
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+.container{
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    /* transform: all 2s; */
+    justify-content: center;
+}
+
+.brand h1 a{
+    font-size: 1.5rem;
+    color: whitesmoke;
+}
+.brand h1 a{
+    text-decoration: none;
+}
+
+/*.brand h1 a span{
+    color: rgb(161, 29, 56);
+}*/
+
+/* header section */
+#header {
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: auto;
+    border-bottom: 3px solid rgb(116, 119, 119);
+    margin-right: 40px;
+}
+#header .header{
+    min-height: 10vh;
+    background-color: rgba(31, 30, 30, 0.24);
+
+}
+#header .nav-bar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1300px;
+    width: 100%;
+    height: 100%;
+    padding: 0 10px;
+}
+#header .nav-list ul{
+    list-style: none;
+    position: absolute;
+    background-color: rgb(31, 30, 30);
+    width: 100vw;
+    height: 80vh;
+    right: 100%;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1;    
+    transition: .8s ease right;
+}
+#header .nav-list ul li a#admin-dash{
+    display: none;
+}
+#header .nav-list ul.active{
+right: 0;
+}
+#header .nav-list ul a{
+text-decoration: none;
+font-size: 2rem;
+font-weight: 500;
+padding: 12px;
+display: block;
+color: white;
+}
+
+#header .nav-list ul a.active_link{
+    color: rgb(57, 20, 220);
+    }
+
+#header .nav-list ul a:hover{
+    color: rgb(20, 50, 220);
+}
+#header .hamburger{
+    height: 30px;
+    width: 30px;
+    display: inline-block;
+    top: 3px;
+    z-index: 100;
+    border: 3px solid white;
+    right: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    position: relative;
+    cursor: pointer;
+}
+#header .hamburger .bar{
+    height: 2px;
+    width: 21px;
+    position: relative;
+    background-color: white;
+    z-index: -1;
+
+}
+#header .hamburger .bar::after,
+#header .hamburger .bar::before{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    transition: .3s ease;
+    transition-property: top bottom;
+    
+}
+#header .hamburger .bar::after{
+    top: 7px;
+}
+#header .hamburger .bar::before{
+    bottom:7px
+}
+
+#header .hamburger.active .bar::after{
+    top: 0;
+}
+#header .hamburger.active .bar::before{
+    bottom:0
+}
+/* #side #stocking{ */
+    /* margin: 2rem; */
+/* } */
+
+/* media query */
+@media only screen and (min-width:1000px){
+    #header .hamburger{
+        display: none;
+    }
+    #header .nav-list ul{
+        position: initial;
+        display: block;
+        height: auto;
+        width: fit-content;
+        background-color: transparent;
+    }
+    #header .nav-list ul li{
+        display: inline-block;
+    }
+    #header .nav-list ul li a{
+        font-size: 1.2rem;
+    }
+   .text{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    font-size: 6rem;
+    }
+    .text .image{
+        width: 100%;
+        margin-bottom: -40px;
+        margin-left: -150px;
+        /* margin-top: -100px; */
+    }
+    #home .text .side{
+        margin-top: 200px;
+        width: 90%;
+        margin-right: 20px;
+        font-size: 3rem;
+        text-align: center;
+    }
+    #home .hero .text .side .cta{
+        margin-top: 50px;
+        margin-left: -340px;
+    }
+}
+@media (max-width:430px){
+    #home .hero .text .side h1{
+        
+        font-size: 1.8rem;
+        /* margin-right: 29px; */
+        
+    }
+    #home .hero .text .side a.cta{
+       max-height: 2rem;
+       width: 10rem;
+       font-size: 1rem;
+        
+    }
+    .brand h1 a{
+        font-size: 1rem;
+    }
+    #header .hamburger .bar{
+        
+        width: 19px;
+
+    }
+}
+@media (max-width:378px){
+    #home .hero .text .side{
+        width: 50%;
+    }
+    #home .hero .text .side h1{
+        
+        font-size: 1.6rem;
+        /* margin-right: 20px; */
+        
+    }
+    #home .hero .text .side a.cta{
+       max-height: 2rem;
+       width: 9rem;
+       font-size: 0.7rem;
+        justify-content: center;
+    }
+    .brand h1 a{
+        font-size: 1rem;
+    }
+    #header .hamburger .bar{
+        
+        width: 19px;
+
+    }
+}
+@media (max-width:342px){
+    #home .hero .text .side h1{
+        
+        font-size: 1.2rem;
+        /* margin-right: 20px; */
+        
+    }
+    #home .hero .text .side a.cta{
+       max-height: 2rem;
+       width: 8rem;
+       font-size: 0.8rem;
+        
+    }
+    .brand h1 a{
+        font-size: 1rem;
+    }
+    #header .hamburger .bar{
+        
+        width: 19px;
+
+    }
+}
+@media (max-width:252px){
+    #home .hero .text .side h1{
+        
+        font-size: 0.9rem;
+        
+    }
+    #home .hero .text .side a.cta{
+       max-height: 1.5rem;
+       padding: 4px;
+       width: 6rem;
+       font-size: 0.6rem;
+        
+    }
+    .brand h1 a{
+        font-size: 1.1rem;
+    }
+    #header .hamburger .bar{
+        
+        width: 19px;
+
+    }
+}
+@media (max-width:210px){
+    #home .hero .text .side h1{
+        
+        font-size: 0.7rem;
+        
+    }
+    #home .hero .text .side a.cta{
+       max-height: 1.5rem;
+       padding: 4px;
+       width: 4rem;
+       font-size: 0.4rem;
+        
+    }
+    .brand h1 a{
+        font-size: 1.1rem;
+    }
+    #header .hamburger .bar{
+        
+        width: 19px;
+
+    }
+}
+@media (max-width:425px){
+    #home .text .side h1{
+        
+        font-size: 1.2rem;
+        margin-right: 6px;
+        
+    }
+    #home .text .side .cta{
+        padding: 5px;
+        height: 2rem;
+        font-size: 0.7rem;
+        
+    }
+}
+@media (max-width:471px){
+    #home .text .side .cta{
+        padding: 10px;
+        height: 2.8rem;
+        font-size: 1.1rem;
+        width: 12rem;
+        
+    }
+}
+/* end of media query */
+
+/* end of header section */
+
+/* home section */
+#home{
+    background-color: #3d3b3b;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transition: .5s ease;
+    
+}
+/* ami-backgr2.jpg */
+#home .hero{
+    background-image: url('ami-backgr111.jpg');
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-color: black;
+    background-size: cover;
+}
+#home .hero::after{
+    content: '';
+    background-color: black;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: .8;
+
+}
+#home .text .image img{
+    top: 30px;
+   margin-bottom: 40px;
+    margin-left: 20%;
+    width: 50%;
+    align-items: center;
+}
+#home .text {
+    width: 100%;
+    z-index: 1;
+    margin-left: 48%;
+    float: right;
+}
+#home .text h1{
+    display: block;
+    margin-left: 7%;
+    width: fit-content;
+    font-size: 1.5rem;
+    position: relative;
+    width: fit-content;
+    color: white;
+    align-items: right;
+    animation: white .5s ease forwards;
+    animation-delay: 1s;
+}
+#home .text h1:nth-child(1){
+    animation-delay :1s;
+    
+}
+#home .text h1:nth-child(2).proffesion{
+    animation-delay :2s;
+    color: crimson;
+}
+#home .text h1:nth-child(3) element{
+    animation-delay :3s;
+    color: cyan;
+}
+/* #home .text .side h1{
+    
+} */
+#home .text h1 span{
+    position:absolute;
+    top:0;
+    left:0;
+    height:100%;
+    width:0;
+    background-color: rgb(224, 77, 106);
+    animation: text_reveal_box 1s ease;
+    animation-delay: .5s;
+
+}
+
+#home .text h1:nth-child(1) span{
+    animation-delay: .5s;
+}
+#home .text h1:nth-child(2) span{
+    animation-delay: 1.5s;
+}
+#home .text h1:nth-child(3) span{
+    animation-delay: 2.5s;
+}
+#home .text .cta{
+    display: inline-block;
+    padding: 10px 30px;
+    color: whitesmoke;
+    background-color: transparent;
+    border: 3px solid rgb(224, 77, 106);
+    font-size: 20px;
+    border-radius: 10px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 5%;
+    text-transform: uppercase;
+    transition: .3s ease background-color;
+}
+#home .text .cta:hover {
+background-color: rgb(224, 77, 106);
+border: 3px solid whitesmoke;
+}
+
+@keyframes text_reveal_box {
+    50% {
+        width:100%;
+        left:0;
+    }
+    100% {
+        width:0;
+        left:0;
+    }
+}
+
+@keyframes text_reveal {
+    100% {
+        color:whitesmoke;
+        color:rgb(224, 77, 106);
+    }
+    /* 50%{
+        color:crimson
+    }*/
+} 
+/* end of home section */
+/* ----------------------------------------------------------------------------------- */
+
+/* about section */
+#about{
+    width: 90%;
+    margin:20px auto;
+    background: rgb(245, 242, 242);
+    border-radius: 4px;
+}
+#about .about {
+    display: flex;
+    flex-direction:column;
+    text-align: center;
+    max-width:90%;
+    margin: auto;
+    padding: 60px 0;
+    
+}
+#about .about .about-title{
+    margin-top: 30px;
+} 
+#about .about .about-title h1{
+    font-size:2rem;
+    font-weight:100;
+    margin-top: 20px;
+    /* border-bottom: 2px solid cyan; */
+    margin-bottom:12px;
+    text-align: center;
+}
+#about .about .about-title span hr {
+    width:70%;
+    margin-left: 30px;
+    margin-top:10px;
+    border: 2px  solid rgb(173, 201, 201);
+    
+}
+#about .about .pragra h2{
+    color:rgb(1, 1, 10);;
+    font-weight:100;
+    margin-top:30px;
+    margin-bottom:20px;
+    text-align: center;
+}
+#about .about .pragra p{
+    font-size:1.2rem;
+    margin:30px;
+}
+#about .about .pragra p span {
+    font-size:1.4rem;
+    color: rgb(224, 77, 106);;
+}
+
+#about .about a.btn{
+    display: inline-block;
+    padding: 10px;
+    color: black;
+    background-color: transparent;
+    border: 3px solid rgb(224, 77, 106);;
+    font-size: 20px;
+    border-radius: 10px;
+    margin-top: 50px;
+    margin-left: 5%;
+    text-transform: uppercase;
+    transition: .3s ease background-color;
+}
+#about .about a.btn:hover {
+background-color: rgb(156, 77, 93);
+color: white;
+}
+@media only screen and (min-width:1025px) and (max-width:1500px){
+    #about .about{
+        min-height: 600px;
+        margin-top: -100px;
+        margin-bottom: 60px;
+        
+    }
+
+    #about .about .about-title{
+        margin-top: -50px; 
+    }
+    
+    #about .about a.btn{
+        width: 400px;
+        margin-left: 3.5%;
+        font-size: 2rem;
+        margin-bottom: -200px;
+    }
+    #about .about .pragra h2{
+        font-size: 2.5rem;
+    }
+    #about .about .about-title h1{
+        margin-top: 10px;
+    }
+    #about .about .pragra p{
+        font-size:1.6rem;
+        margin:30px;
+    }
+
+    #about .about .pragra p span{
+        font-size:1.8rem;
+    }
+}
+@media only screen and (min-width:769px) and (max-width:1024px){
+    #about{
+        max-height: 60vh;
+    }
+    #about .about{
+        max-height: 60vh;
+        min-height: 600px;
+        width: 90vw;    
+    }
+
+    #about .about .about-title{
+        margin-top: -200px; 
+    }
+    
+    #about .about a.btn{
+        margin-top: 90px;
+        width: 400px;
+        margin-left: 5%;
+        font-size: 1.5rem;
+        margin-bottom: -250px;
+    }
+    #about .about .pragra h2{
+        font-size: 2rem;
+    }
+    #about .about .about-title h1{
+        margin-top: 10px;
+    }
+    #about .about .pragra p{
+        font-size:1.6rem;
+        margin:30px;
+    }
+
+    #about .about .pragra p span{
+        font-size:1.8rem;
+    }
+}
+
+@media only screen and (min-width:481px) and (max-width:768px){
+    #about{
+        max-height: 70vh;
+        background-color: #eeeeee;
+    }
+    #about .about{
+        height: 100%;
+        /* margin-top: -10%; */
+        max-height: 80vh;
+        
+    }
+    #about .about .about-title h1{
+        margin-top: -300px;
+    }
+    .about .about-title h1{
+        font-size: 3rem;
+    }
+    #about .about .pragra{
+        margin-top: -3vh;
+        height: 30vh;
+    }
+    #about .about .pragra h2{
+        margin-top: -150px;
+        font-size: 2.7rem;
+    }
+    #about .about .pragra p{
+        font-size:1.9rem;
+        margin:30px;
+    }
+    #about .about .pragra p span{
+        font-size:2.4rem;
+    }
+    #about .about a.btn{
+        margin-top: -7vh;
+        /* margin-bottom: -100px; */
+        width:300px;
+        font-size:1.4rem;
+        margin-left: 5vw;
+    }
+}
+
+@media only screen and (min-width: 320px) and (max-width:480px){
+    #about{
+        max-height: 85vh;
+        margin-top: 30vh;
+    }
+    #about .about .pragra{
+        width: 90vw;
+    }
+    #about .about .pragra h2{
+        width: 90vw;
+    }
+    #about .about{
+        margin-top: -40vh;
+        height:40vh;
+    }
+    
+    #about .about a.btn{
+        margin-bottom: 70px;
+        margin-left: 30px;
+        width: 230px;
+        font-size: 1.1rem;
+    }
+    #about .about .about-title h1{
+        font-size:2rem;
+        font-weight: 500;
+        /* margin-top: 100px;    */
+    }
+}
+@media only screen and (max-width: 320px){
+    #about .about a.btn{
+        margin-bottom: 70px;
+        margin-left: 5vw;
+        
+    }
+}
+/* end of about secction */
+/* ----------------------------------------------------------------------------------- */
+/* skills section */
+/* #skills{
+    background: rgb(245, 242, 242);
+} */
+#skills .flexbox{
+    flex-direction: column;
+    display: flex;
+    max-width: 1500px;
+    padding: 20px;
+    margin-top: 0;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+    
+    /* background-color: #FDF9F9 */
+}
+
+#skills .flexbox span{
+    text-align: center;
+    margin-top: 10px;
+    width: 10%;
+    background-color: rgb(105, 230, 230);
+    margin-left: 8px;
+    border: 2px solid rgb(85, 236, 236)
+}
+#skills .flexbox .flex-skills{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-row: auto;
+    grid-column-gap: 10px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap:1rem;
+    width: 90%;
+    padding: 20px;
+    margin-left: -25px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    min-height: 20%;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #ECE9E9;
+    box-shadow: #EFEBEB;
+    
+}
+/* #skills .flexbox .flex-skills */
+#skills .flexbox .skill-title{
+    text-align: center;
+    color: rgb(88, 88, 216);
+    font-size: 2rem;
+    position: relative;
+}
+#skills .flexbox .flex-skills{
+    align-items:center;
+    margin: 10px;
+}
+
+#skills .flexbox .flex-skills .flex-skill-item{
+ width: 200px;
+ background: rgb(245, 242, 242);
+ border: 1px solid #cccccc;
+ transition: all 1s;
+ min-height: 130px;
+ border-radius: 6px;
+ box-shadow: 3px #ccc; 
+ overflow: hidden;
+ margin-left: 10px;
+ margin-top: 20px;
+ margin-bottom: 20px;
+}
+#skills .flexbox .flex-skills .flex-skill-item img{
+ margin-top: 10px;
+ width: 100%;
+ height: 100%;
+ margin-left: 8px
+ }
+ #skills .flexbox .flex-skills .flex-skill-item p{
+ text-align: center;
+ margin-top: 10px
+}
+#skills .flexbox .flex-skills .flex-skill-item :hover{
+ transform: scale(1.1);
+ transition: all .5s;
+}
+
+#skills .flexbox .flex-my-experience{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap:1rem;
+    width: 90%;
+    padding: 20px;
+    margin-left: -25px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    min-height: 20%;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #ECE9E9;
+    box-shadow: #EFEBEB;
+    
+}
+
+#skills .flexbox .exper-title{
+    text-align: center;
+    font-size: 2rem;
+    color: rgb(70, 70, 206);
+    position: relative;
+    margin-bottom: 30px;
+    border-bottom: 2px solid rgb(85, 223, 223);
+
+}
+#skills .flexbox .flex-my-experience p{
+    font-size: 1.2rem;
+    margin-left: 30px;
+}
+
+#skills .flexbox .flex-my-experience .flex-exper-item{
+    width: 27vw;
+    height: 300px;
+}
+#skills .flexbox .flex-my-experience .flex-exper-item img{
+    width:350px;
+    height:180px
+}
+#skills .flexbox .flex-my-experience .flex-exper-item p{
+   font-size: 1.3rem;
+   margin-left: -3px;
+}
+#skills .flexbox .flex-my-experience span{
+    text-align: center;
+    width: 15%;
+    margin-bottom: 10px;
+    height: 2px;
+    background-color: rgb(76, 214, 214);
+    margin-left: 8px;
+    border: 2px solid rgb(70, 233, 233)
+
+}
+
+@media only screen and (min-width:481px) and (max-width:768px){
+    #skills{
+        min-height: 100vh;
+        /* margin-bottom: 500px; */
+        
+    }
+    #skills .flexbox{
+        margin-left: 0px;
+        width: 90vw;
+    }
+    #skills .flexbox .flex-skills{
+        /* width: 90%; */
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin-left: -125px;
+        margin-top: 10px;
+        width: 87vw;
+        position: relative;
+        /* grid-column-gap: 10px; */
+        }
+
+        #skills .flexbox .flex-skills .flex-skill-item{
+         width: 20vw;
+         margin-left: 11vw;
+         height: 170px;
+        }
+
+        #skills .flexbox span{
+            text-align: center;
+            margin-top: 10px;
+            width: 10%;
+            background-color: rgb(71, 231, 231);
+            margin-left: 8px;
+            border: 2px solid rgb(71, 226, 226)
+        }
+        #skills .flexbox .skill-title{
+            text-align: center;
+            font-size: 4rem;
+            position: relative;        
+        }
+        #skills .flexbox .flex-skills .flex-skill-item img{
+         width: 13vw;
+         margin-left: 3vw;
+         height: 13vw;
+        }
+        #skills .flexbox .flex-skills .flex-skill-item p{
+         font-size: 1.4rem;
+         text-align: center;
+        }
+        #skills .flexbox .flex-my-experience{
+            width:87vw;
+            margin-left:0.1vw;
+            padding-bottom: 20px;
+        }
+        #skills .flexbox .flex-my-experience .exper-title{
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 40px;
+        
+        }
+        
+    #skills .flexbox .flex-my-experience .flex-exper-item{
+       margin-left: 7vw;
+       margin-bottom:10px
+    }
+    #skills .flexbox .flex-my-experience .flex-exper-item img{
+        margin-top: 30px;
+        width: 70vw;
+        height: 32vw;
+     }
+     #skills .flexbox .flex-my-experience .flex-exper-item p{
+        font-size: 1.3rem;
+        margin-bottom: 30px;
+        width: 70vw;
+     }
+}
+@media only screen and (max-width: 320px){
+    #skills{
+        margin-left: -10vw;
+    }
+    #skills .flexbox{
+        min-height: 100vh;
+        /* width: 77vw; */
+        margin-right:17vw;
+        /* margin-bottom: 250px; */
+        margin-left: -12vw;
+    }
+    #skills .flexbox .flex-skills{
+    display: grid;
+    /* background-color: crimson; */
+    grid-template-columns: 1fr;
+    width: 95vw;
+    margin-left: -10vw;
+    margin-right: 15vw;
+    /* overflow: hidden; */
+    align-items: center;
+    justify-content: center;
+    
+}
+#skills .flexbox .flex-skills .flex-skill-item{
+    width: 70vw;
+    margin-left: -8vw;
+    margin-right: 5vw;
+    justify-content: center;
+    align-items: center;
+}
+#skills .flexbox .flex-skills .flex-skill-item img{
+    width:30vw;
+    height: 120px;
+    margin-top:8px; 
+    margin-left: 100px;
+}
+#skills .flexbox .flex-skills .flex-skill-item p{
+    font-size: 1.5rem;
+    margin-bottom:10px
+
+}
+#skills .flexbox .skill-title{
+    text-align: center;
+    color: rgb(68, 68, 226);
+    margin-top:1rem;
+    width: 80%;
+    margin-left: 10%;
+    font-size: 1.6rem;
+    position: relative;
+    /*margin-top: -130px;*/
+
+}
+#skills .flexbox .flex-my-experience{
+    width: 90vw;
+    margin-right: 10vw;
+    /* margin-left: 50px; */
+    border: none;
+
+}
+#skills .flexbox .flex-my-experience .flex-exper-item{
+    width: 85vw;
+    margin-left: -2vw;
+
+}
+#skills .flexbox .flex-my-experience .flex-exper-item img{
+    width: 85vw;
+    
+
+}
+#skills .flexbox .flex-my-experience p{
+    width: 85vw;
+    /* margin-left: 10px */
+
+}
+#skills .flexbox .flex-my-experience .exper-title{
+    text-align: center;
+    font-size: 1.2rem;
+    color: rgb(63, 63, 204);
+    position: relative;
+    margin-bottom: 30px;
+
+}
+
+
+}
+ @media only screen and (max-width: 360px){
+    #skills{
+        min-height: 100vh;
+        /* margin-bottom: 250px; */
+    }
+    #skills .flexbox{
+        margin-left: -40px;
+        width: 90vw;
+        
+    }
+    #skills .flexbox .flex-skills{
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 95vw;
+    margin-left: -10vw;
+    align-items: center;
+    justify-content: center;
+    
+}
+#skills .flexbox .flex-skills .flex-skill-item{
+    width: 80vw;
+    margin-left: -3vw;
+    margin-right: 3vw;
+    justify-content: center;
+    align-items: center;
+}
+#skills .flexbox .flex-skills .flex-skill-item img{
+    width:30vw;
+    height: 120px;
+    margin-top:8px; 
+    margin-left: 14vw;
+}
+#skills .flexbox .flex-skills .flex-skill-item p{
+    font-size: 1.5rem;
+    margin-bottom:10px
+
+}
+#skills .flexbox .skill-title{
+    text-align: center;
+    color: rgb(65, 65, 218);
+    margin-top:1rem;
+    width: 80%;
+    margin-left: 10%;
+    font-size: 1.6rem;
+    position: relative;
+   
+
+}
+#skills .flexbox .flex-my-experience{
+    width: 90vw;
+    border: none;
+    margin-left: 0px;
+    
+
+}
+#skills .flexbox .flex-my-experience .flex-exper-item{
+    width: 80vw;
+    margin-left: 40px;
+}
+#skills .flexbox .flex-my-experience .flex-exper-item img{
+    width: 70vw;
+}
+#skills .flexbox .flex-my-experience .flex-exper-item p{
+    width: 70vw;
+
+}
+#skills .flexbox .flex-my-experience .exper-title{
+    text-align: center;
+    font-size: 1.2rem;
+    color: rgb(69, 69, 219);
+    position: relative;
+    margin-bottom: 30px;
+
+}
+#skills .flexbox .flex-skills{
+    width: 90%;
+
+
+}
+#skills .flexbox .flex-skills .flex-skill-item{
+ width: 220px;
+ margin-left: 5%;
+}
+ }
+
+ @media only screen and (max-width: 375px){
+    #skills{
+        min-height: 100vh;
+        margin-left: -30px;
+        /* background-color: lawngreen; */
+    }
+    #skills .flexbox {
+        width: 80vw;
+        margin-left: -20px;
+    }
+    #skills .flexbox .flex-skills{
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 95vw;
+    margin-left: -4vw;
+    margin-right: 8vw;
+    align-items: center;
+    justify-content: center;
+    
+}
+#skills .flexbox .flex-skills .flex-skill-item{
+    width: 80vw;
+    margin-left: 5vw;
+    margin-right: 2vw;
+    justify-content: center;
+    align-items: center;
+}
+#skills .flexbox .flex-skills .flex-skill-item img{
+    width:30vw;
+    height: 120px;
+    margin-top:8px; 
+    margin-left: 22vw;
+}
+#skills .flexbox .flex-skills .flex-skill-item p{
+    font-size: 1.5rem;
+    margin-bottom:10px
+
+}
+#skills .flexbox .skill-title{
+    text-align: center;
+    color: rgb(71, 71, 221);
+    margin-top:1rem;
+    width: 80%;
+    margin-left: 10%;
+    font-size: 1.6rem;
+    position: relative;
+   
+
+}
+#skills .flexbox span{
+    margin-right: 18vw;
+}
+#skills .flexbox .flex-my-experience{
+    justify-content: center;
+    align-items: center;
+    width: 80vw;
+    margin-left: 10vw;
+    margin-right: -4vw;
+    border: none;
+
+}
+#skills .flexbox .flex-my-experience .flex-exper-item{
+    width: 75vw;
+    margin-left: 7vw;
+
+}
+#skills .flexbox .flex-my-experience .flex-exper-item img{
+    width: 70vw;
+    
+
+}
+#skills .flexbox .flex-my-experience p{
+    width: 75vw;
+    /* margin-left: 10px */
+
+}
+#skills .flexbox .flex-my-experience .exper-title{
+    text-align: center;
+    font-size: 1.2rem;
+    color: rgb(70, 70, 233);
+    position: relative;
+    margin-bottom: 30px;
+
+}
+#skills .flexbox .flex-skills{
+    width: 90%;
+
+
+}
+#skills .flexbox .flex-skills .flex-skill-item{
+ width: 220px;
+ margin-left: 5%;
+}
+ }
+
+ @media only screen and (max-width: 411px){
+    #skills{
+        min-height: 100vh;
+        /* margin-bottom: 250px; */
+        margin-left: 7%;
+    }
+    #skills .flexbox .flex-skills{
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 95vw;
+    margin-left: -3vw;
+    align-items: center;
+    justify-content: center;
+    
+}
+#skills .flexbox span{
+    margin-right: 18vw;
+}
+#skills .flexbox .flex-skills .flex-skill-item{
+    width: 80vw;
+    margin-left: 5vw;
+    margin-right: 2vw;
+    justify-content: center;
+    align-items: center;
+}
+#skills .flexbox .flex-skills .flex-skill-item img{
+    width:30vw;
+    height: 120px;
+    margin-top:8px; 
+    margin-left: 16vw;
+}
+#skills .flexbox .flex-skills .flex-skill-item p{
+    font-size: 1.5rem;
+    margin-bottom:10px
+
+}
+#skills .flexbox h1.skill-title{
+    text-align: center;
+    color: rgb(71, 71, 231);
+    margin-top:1rem;
+    width: 80%;
+    margin-left: -10vw;
+    margin-right: 10vw;
+    font-size: 1.6rem;
+    position: relative;
+   
+
+}
+#skills .flexbox .flex-my-experience{
+    width: 80vw;
+    border: none;
+
+}
+#skills .flexbox .flex-my-experience .flex-exper-item{
+    width: 75vw;
+    margin-left: 2vw;
+
+}
+#skills .flexbox .flex-my-experience .flex-exper-item img{
+    width: 70vw;
+    
+
+}
+#skills .flexbox .flex-my-experience p{
+    margin-left: 10px
+
+}
+#skills .flexbox .flex-my-experience .exper-title{
+    text-align: center;
+    font-size: 1.2rem;
+    color: rgb(68, 68, 216);
+    position: relative;
+    margin-bottom: 30px;
+
+}
+#skills .flexbox .flex-skills{
+    width: 90%;
+
+
+}
+#skills .flexbox .flex-skills .flex-skill-item{
+ width: 220px;
+ margin-left: 5%;
+}
+
+ }
+
+ @media only screen and (max-width: 414px){
+    #skills{
+        min-height: 100vh;
+        /* margin-bottom: 250px; */
+        margin-left: 7%;
+    }
+    #skills .flexbox{
+        width: 85vw;
+    }
+    #skills .flexbox .flex-skills{
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 95vw;
+    margin-left: -5vw;
+    align-items: center;
+    justify-content: center;
+    
+}
+#skills .flexbox .flex-skills .flex-skill-item{
+    width: 80vw;
+    margin-left: 5vw;
+    margin-right: 2vw;
+    justify-content: center;
+    align-items: center;
+}
+#skills .flexbox .flex-skills .flex-skill-item img{
+    width:30vw;
+    height: 120px;
+    margin-top:8px; 
+    margin-left: 16vw;
+}
+#skills .flexbox .flex-skills .flex-skill-item p{
+    font-size: 1.5rem;
+    margin-bottom:10px
+
+}
+#skills .flexbox .skill-title{
+    text-align: center;
+    color: rgb(62, 62, 202);
+    margin-top:1rem;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 12vw;
+    font-size: 1.6rem;
+    position: relative;
+   
+
+}
+#skills .flexbox .flex-my-experience{
+    width: 80vw;
+    /* margin-left:6vw; */
+    border: none;
+
+}
+#skills .flexbox .flex-my-experience .flex-exper-item{
+    width: 75vw;
+    margin-left: 8vw;
+
+}
+#skills .flexbox .flex-my-experience .flex-exper-item img{
+    width: 70vw;
+    
+
+}
+#skills .flexbox .flex-my-experience p{
+    margin-left: 10px
+
+}
+#skills .flexbox .flex-my-experience .exper-title{
+    text-align: center;
+    font-size: 1.2rem;
+    color: rgb(64, 64, 212);
+    position: relative;
+    margin-bottom: 30px;
+
+}
+#skills .flexbox .flex-skills{
+    width: 90%;
+
+
+}
+#skills .flexbox .flex-skills .flex-skill-item{
+ width: 220px;
+ margin-left: 5%;
+}
+ }
+@media only screen and (max-width:450px){
+    #skills{
+        min-height: 100vh;
+        margin-bottom: 250px;
+        margin-left: 7%;
+    }
+    #skills .flexbox {
+        margin-left: 30px;
+    }
+    #skills .flexbox .flex-skills{
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 95vw;
+    margin-left: -3vw;
+    align-items: center;
+    justify-content: center;
+    
+}
+#skills .flexbox .flex-skills .flex-skill-item{
+    width: 80vw;
+    margin-left: 5vw;
+    margin-right: 2vw;
+    justify-content: center;
+    align-items: center;
+}
+#skills .flexbox .flex-skills .flex-skill-item img{
+    width:30vw;
+    height: 120px;
+    margin-top:8px; 
+    margin-left: 11vw;
+}
+#skills .flexbox .flex-skills .flex-skill-item p{
+    font-size: 1.5rem;
+    margin-bottom:10px
+
+}
+#skills .flexbox .skill-title{
+    text-align: center;
+    color: rgb(73, 73, 216);
+    margin-top:1rem;
+    width: 80%;
+    margin-left: 10%;
+    font-size: 1.6rem;
+    position: relative;
+   
+
+}
+#skills .flexbox .flex-my-experience{
+    width: 85vw;
+    border: none;
+    margin-left: -75px;
+
+}
+#skills .flexbox .flex-my-experience .flex-exper-item{
+    width: 75vw;
+    /* margin-left: 2vw; */
+
+}
+#skills .flexbox .flex-my-experience .flex-exper-item img{
+    width: 70vw;
+    
+
+}
+#skills .flexbox .flex-my-experience p{
+    margin-left: 10px
+
+}
+#skills .flexbox .flex-my-experience .exper-title{
+    text-align: center;
+    font-size: 1.2rem;
+    color: rgb(54, 54, 230);
+    position: relative;
+    margin-bottom: 30px;
+
+}
+#skills .flexbox .flex-skills{
+    width: 90%;
+
+
+}
+#skills .flexbox .flex-skills .flex-skill-item{
+ width: 220px;
+ margin-left: 5%;
+}
+
+}
+
+@media only screen and (mxa-width:280px){
+    #skills{
+        min-height: 100vh;
+        margin-bottom: 250px;
+        margin-left: 7%;
+    }
+    #skills .flexbox {
+        margin-left: 30px;
+    }
+    #skills .flexbox .flex-skills{
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 90vw;
+    margin-left: -3vw;
+    align-items: center;
+    justify-content: center;
+    
+}
+#skills .flexbox .flex-skills .flex-skill-item{
+    width: 60vw;
+    justify-content: center;
+    align-items: center;
+}
+#skills .flexbox .flex-skills .flex-skill-item img{
+    width:20vw;
+    height: 100px;
+    margin-top:8px; 
+    margin-left: 11vw;
+}
+#skills .flexbox .flex-skills .flex-skill-item p{
+    font-size: 1.1rem;
+    margin-bottom:10px
+
+}
+#skills .flexbox .skill-title{
+    text-align: center;
+    color: rgb(65, 65, 223);
+    margin-top:1rem;
+    width: 80%;
+    margin-left: 10%;
+    font-size: 1.6rem;
+    position: relative;
+   
+
+}
+#skills .flexbox .flex-my-experience{
+    width: 85vw;
+    border: none;
+    margin-left: -75px;
+
+}
+#skills .flexbox .flex-my-experience .flex-exper-item{
+    width: 75vw;
+    background: white;
+    /* margin-left: 2vw; */
+
+}
+#skills .flexbox .flex-my-experience .flex-exper-item img{
+    width: 70vw;
+    
+
+}
+#skills .flexbox .flex-my-experience p{
+    margin-left: 10px
+
+}
+.flexbox-project-item {
+    background: white;
+}
+#skills .flexbox .flex-my-experience .exper-title{
+    text-align: center;
+    font-size: 1.2rem;
+    color: rgb(52, 52, 224);
+    position: relative;
+    margin-bottom: 30px;
+
+}
+#skills .flexbox .flex-skills{
+    width: 90%;
+
+
+}
+#skills .flexbox .flex-skills .flex-skill-item{
+ width: 220px;
+ margin-left: 5%;
+}
+}
+@media only screen and (min-width:769px) and (max-width: 1024px){
+    #skills{
+        min-height: 100vh;
+        /* margin-bottom: 750px; */
+        
+    }
+    #skills .flexbox span{
+    text-align: center;
+    margin-top: 10px;
+    width: 10%;
+    background-color: rgb(77, 199, 199);
+    margin-left: 8px;
+    border: 2px solid rgb(42, 177, 177)
+}
+#skills .flexbox .skill-title{
+    text-align: center;
+    font-size: 4rem;
+    position: relative;
+
+}
+ #skills .flexbox .flex-skills{
+    margin-left: 1.5vw;
+    margin-top: 10px;
+    width: 90vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    grid-column-gap: 10px;
+    
+}
+#skills .flexbox .flex-skills .flex-skill-item{
+ width: 60vw;
+ /* margin-left: 10vw; */
+ /* height: ; */
+ position: relative;
+}
+#skills .flexbox .flex-skills .flex-skill-item img{
+ width: 130px;
+ margin-left: 3vw;
+ height: 130px;
+}
+#skills .flexbox .flex-skills .flex-skill-item p{
+ font-size: 1.1rem;
+ text-align: center;
+}
+#skills .flexbox .flex-my-experience{
+    width: 89vw;
+    margin-left: 1.8vw;
+    margin-right: 2vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+}
+#skills .flexbox .flex-my-experience .flex-exper-iteme{
+width: 28vw;
+}
+#skills .flexbox .flex-my-experience .flex-exper-item img{
+    width: 26vw;
+    }
+    #skills .flexbox .flex-my-experience .flex-exper-item p{
+        width: 26vw;
+        }
+
+#skills .flexbox .flex-my-experience h1.exper-title{
+    text-align: center;
+    font-size: 3.5rem;
+    margin-bottom: 40px;
+
+}
+#skills .flexbox .flex-my-experience p{
+    font-size: 1.5rem;
+
+}
+
+}
+
+@media only screen and (min-width:1025px) and (max-width:1500px){
+    #skills .flexbox span{
+        text-align: center;
+        margin-top: 10px;
+        width: 10%;
+        background-color: rgb(56, 187, 187);
+        margin-left: 8px;
+        border: 2px solid rgb(48, 201, 201)
+    }
+    #skills .flexbox .skill-title{
+        text-align: center;
+        font-size: 4rem;
+        position: relative;
+    
+    }
+     #skills .flexbox .flex-skills{
+        margin-left: 1.5vw;
+        margin-top: 10px;
+        /* background-color: #cccccc; */
+        width: 90vw;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        position: relative;
+        grid-column-gap: 10px;
+        
+    }
+    #skills .flexbox .flex-skills .flex-skill-item{
+     width: 20vw;
+     /* background-color: gray; */
+    }
+    
+    #skills .flexbox .flex-skills .flex-skill-item img{
+        width: 130px;
+        margin-left: 5vw;
+        height: 130px;
+       }
+       #skills .flexbox .flex-skills .flex-skill-item p{
+        font-size: 1.5rem;
+        text-align: center;
+        margin-bottom: 10px;
+       }
+    #skills .flexbox .flex-my-experience{
+        width: 90vw;
+        margin-left: 1.8vw;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    
+    }
+    #skills .flexbox .flex-my-experience .flex-exper-iteme{
+    width: 28vw;
+    }
+    #skills .flexbox .flex-my-experience .flex-exper-item img{
+        width: 26vw;
+        }
+        #skills .flexbox .flex-my-experience .flex-exper-item p{
+            width: 26vw;
+            font-size: 1.5rem;
+            }
+    
+    #skills .flexbox .flex-my-experience h1.exper-title{
+        text-align: center;
+        font-size: 3.5rem;
+        margin-bottom: 40px;
+    
+    }
+    #skills .flexbox .flex-my-experience p{
+        font-size: 1.5rem;
+    
+    }
+}
+
+/* end of skills section */
+.flexbox-project{
+    display: grid;
+    grid-template-columns: 6rem;
+    grid-row-gap: 1.2rem;
+    grid-column-gap: 1.2rem;
+    margin-left: 5vw;
+    
+}
+.title h1{
+    text-align: center;
+    color: rgb(63, 63, 219);
+    font-size: 1.7rem;
+    margin-top: 30px;
+    margin-bottom: 30px
+
+}
+
+.flexbox-project .flexbox-project-item{
+    padding: 10px;
+    border: 1px solid #ccc;
+    box-shadow: 0px  2px 2px 2px #cccccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    width: 80vw;
+    height: 320px;
+    transition: .6s ease;
+
+}
+.flexbox-project .flexbox-project-item:hover{
+    transform: scale(1.1);
+
+}
+.flexbox-project .flexbox-project-item img{
+    width: 100%;
+    height: 200px
+
+}
+.flexbox-project .flexbox-project-item p{
+    font-size: 1.3rem;
+    margin-top: 10px;
+    margin-bottom: 10px
+
+}
+
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+    .title h1{
+        margin-top: -200px;
+        /* background-color:cyan */
+    }
+    .flexbox-project{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-row-gap: 1.2rem;
+        grid-column-gap: 1.2rem;
+        width: 95vw;
+        margin-bottom: 50px;
+        margin-left: 0px;
+        /* margin-top: -100px; */
+    }
+    .flexbox-project .flexbox-project-item {
+    width: 80vw;
+    margin-left: 10%;
+    height: 100%
+
+}
+   .flexbox-project .flexbox-project-item p{
+    font-size: 1.4rem;
+    margin-top: 10px;
+    margin-bottom: 10px
+
+} 
+
+}
+@media only screen and (min-width: 481px) and (max-width: 768px){
+    #projects{
+        margin-top: 60px;
+    }
+    .flexbox-project{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-row-gap: 1.2rem;
+    grid-column-gap: 1.2rem;
+    width: 95vw;
+    margin-bottom: 50px;
+    /* margin-left: 15vw */
+
+}
+.title h1{
+    font-size: 1.9rem;
+    margin-top: 60px;
+}
+.flexbox-project .flexbox-project-item {
+    width: 40vw;
+    height: 100%;
+    /* margin-left: 1.5vw */
+
+} 
+.flexbox-project .flexbox-project-item img{
+    width: 37vw
+
+} 
+   .flexbox-project .flexbox-project-item p{
+    font-size: 1.3rem;
+    margin-top: 10px;
+    margin-bottom: 10px
+
+} 
+
+ }
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+    #projects{
+        margin-top: 60px;
+    }
+    .flexbox-project{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 95vw;
+    margin-bottom: 50px;
+    
+}
+.title h1{
+    font-size: 1.9rem;
+    margin-top: 60px;
+}
+.flexbox-project .flexbox-project-item {
+    width: 38vw;
+    height: 100%;
+    margin-left: 2vw
+
+} 
+.flexbox-project .flexbox-project-item img{
+    width: 90%
+
+} 
+   .flexbox-project .flexbox-project-item p{
+    font-size: 1.3rem;
+    margin-top: 10px;
+    margin-bottom: 10px
+
+} 
+}
+ @media only screen and  (min-width: 1025px) and (max-width:1500px){
+    #projects{
+        margin-top: 60px;
+    }
+    .flexbox-project{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 90vw;
+    margin-bottom: 50px;
+    margin-left: 6vw;
+}
+.title h1{
+    font-size: 1.9rem;
+    margin-top: 60px;
+}
+.flexbox-project .flexbox-project-item {
+    width: 42vw;
+    height: 100%;
+    /* margin-left: 3vw */
+
+} 
+.flexbox-project .flexbox-project-item img{
+    width: 35vw
+
+} 
+   .flexbox-project .flexbox-project-item p{
+    font-size: 1.3rem;
+    margin-top: 10px;
+    margin-bottom: 10px
+
+}
+ }
+
+ /* contact section */
+#contact .contacts{
+    min-height: 100vh;
+    position: relative;
+    background-color: #8a816e;
+    color: white;
+    background: linear-gradient(
+        to top bottom,
+        rgba(163, 136, 238, 0.8),
+        rgba(255, 255, 255, 0.5)
+      );
+      border-radius: 0.5rem;
+      margin: 2rem 0rem;
+      padding: 2rem;
+      box-shadow: 6px 6px 20px rgba(122, 122, 122, 0.212);
+    
+}
+#contact .contacts h1{
+    padding-top: 50px;
+    text-align: center;
+    margin-top: 50px;
+    font-size: 1.7rem
+}
+
+#contact .contacts .contact-wrap{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 1rem
+}
+#contact .contacts .address{
+    width: 80vw;
+    padding: 20px;
+    text-align: center;
+}
+#contact .contacts .address h3{
+    font-size: 1.5rem;
+    margin-top: 30px;
+    margin-bottom: 20px
+}
+#contact .contacts .address p{
+    font-size: 1.3rem;
+}
+
+#contact .contacts .contact-form{
+    padding: 30px;
+    transition: .7s ease right;
+    text-align: center;
+     
+}
+#contact .contacts .contact-form h3{
+    color: cyan;
+
+}
+
+
+#contact .contacts .contact-form form{
+    padding: 30px;
+    margin-top: 30px;
+    background-color: #f7eeeb;
+    border-radius: 10px;
+    /*height: fit-content*/
+    text-align: left;
+
+}
+#contact .contacts .contact-form form input{
+    width: 73vw;
+    height: 5vh;
+    border-radius: 5px;
+    border: none;
+    border-bottom: 1px solid #cccccc
+
+}
+#contact .contacts .contact-form form textarea{
+    width: 73vw;
+}
+#contact .contacts .contact-form form button{
+    padding: 10px;
+    width: 100px;
+    cursor: pointer;
+    background-color: transparent;
+    border: 2px solid white;
+    color: rgb(3, 2, 8);
+    transition: .6s ease
+    /*margin-bottom: 20px*/
+
+}
+#contact .contacts .contact-form form button:hover{
+    background-color: crimson;
+    border: 2px solid crimson;
+    transition: .6s ease
+}
+
+.contact-social-media{
+    background-color: #f9f9f9;
+    color: #eee;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    
+}
+.contact-social-media img{
+    margin-bottom: 20px;
+    margin-left: 10px;
+    margin-top: 20px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    transition: .7s ease
+}
+
+.contact-social-media img:hover{
+    transform: scale(1.5);
+    transition: .7s ease
+}
+.contact-social-media p{
+    color: #eee;
+    padding-bottom: 30px
+    /*text-align: */
+}
+.contact-social-media p span{
+    color: crimson
+}
+@media only screen and (min-width:1025px) and (max-width: 1500px){
+    #contact .contacts .contact-wrapper{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1rem
+}
+#contact .contacts .address{
+    margin-top: 100px;
+    width: 30vw;
+}
+#contact .contacts .address h3{
+    font-size: 2.3rem;
+
+}
+#contact .contacts .address p{
+    font-size: 2rem;
+}
+#contact .contacts .contact-form{
+    width: 55vw;
+    margin-right: 5vw;
+    margin-top: 10px
+     
+}
+
+#contact .contacts .contact-form form input{
+    width: 40vw;
+   margin-left: 3vw;
+   padding: 10px;
+}
+.email{
+    padding: 10px;
+}
+#description{
+    padding: 10px;
+}
+#contact .contacts .contact-form form textarea{
+    width: 40vw;
+margin-left: 3vw
+}
+
+#contact .contacts .contact-form form button{
+    padding: 15px;
+    width: 20vw;
+    font-size: 1.5rem;
+    margin-left: 3vw
+    }
+    #contact .contacts .contact-form form label{
+    font-size: 1.2rem;
+    margin-left: 3vw
+
+}
+#contact .contacts .contact-form h3{
+    font-size: 1.6rem
+}
+}
+@media only screen and (min-width:769px) and (max-width: 1024px){
+    #contact .contacts .contact-wrapper{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1rem
+}
+#contact .contacts .address{
+    margin-top: 100px;
+    /*margin-left: -15vw*/
+    /* justify-content: center; */
+    width: 30vw;
+    /*padding: 20px;*/
+    /* text-align: center;  */
+}
+#contact .contacts .address h3{
+    font-size: 1.9rem;
+
+}
+#contact .contacts .address p{
+    font-size: 1.7rem;
+}
+#contact .contacts .contact-form{
+    width: 55vw;
+    margin-right: 5vw
+     
+}
+#contact .contacts .contact-form form input{
+    width: 40vw;
+}
+#contact .contacts .contact-form form textarea{
+    width: 40vw;
+}
+
+#contact .contacts .contact-form form button{
+    padding: 15px;
+    width: 20vw;
+    font-size: 1.5rem
+    }
+    #contact .contacts .contact-form form label{
+    font-size: 1.2rem;
+
+}
+#contact .contacts .contact-form h3{
+    font-size: 1.6rem
+}
+}
+@media only screen and (min-width:481px) and (max-width:768px){
+     .contacts{
+         width: 100vw;
+     }
+    #contact .contacts .contact-form{
+        width: 90vw;
+        margin-left: 2vw;
+    }
+    #contact .contacts .address{
+        width: 90vw;
+        margin-left: 2vw;
+        justify-content: center;
+        text-align: center;
+    }
+    #contact .contacts .address h3{
+    font-size: 1.8rem;
+    margin-left: 30px;
+    margin-top: 30px;
+    text-align: center;
+    margin-bottom: 20px
+}
+   #contact .contacts .contact-form h3{
+    font-size: 1.8rem;
+    color: cyan;
+
+}
+    #contact .contacts .address p{
+    font-size: 1.6rem;
+}
+  #contact .contacts .contact-form form label{
+    font-size: 1.2rem;
+
+}
+    #contact .contacts .contact-form form button{
+    padding: 15px;
+    width: 30vw;
+    font-size: 1.2rem;
+    cursor: pointer;
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+    transition: .6s ease
+    /*margin-bottom: 20px*/
+
+}
+}
+
+@media only screen and (min-width: 320px) and (max-width:480px){
+    #contact .contacts .address{
+        justify-content: center;
+    }
+    #contact .contacts .contact-form form{
+    background-color: #494234;
+    padding: 10px;
+    text-align: left;
+    margin-bottom:30px;
+
+}
+}
+
+/* end of contact section */
+
+/* login modal */
+.login-modal{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    /*opacity: 0.6;*/
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+    transition: 0.7s ease
+}
+.modal-content{
+    width: 40%;
+    height: 40%;
+    background-color: white;
+    border-radius: 10px;
+    z-index: 1;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+}
+.modal-content form{
+    margin-top: 8%
+}
+.modal-content form input{
+    width: 50%;
+    display: block;
+    margin: auto;
+}
+.modal-content form a {
+    width: 50%;
+    background-color: lightblue;
+    padding: 5px;
+    display: block;
+    margin: auto;
+    border-radius: 5px;
+    text-align: center;
+}
+.modal-content .close{
+    position: absolute;
+    top: 0px;
+    right: 2%;
+    font-size: 2.5rem;
+    transform: rotate(45deg);
+    cursor: pointer;
+}
+@media only screen and (min-width: 320px) and (max-width: 480px){
+    .modal-content{
+    width: 80%;
+    height: 30%;
+}
+.modal-content h2{
+    margin-top: 12%
+}
+.modal-content form input{
+    width: 90%;
+    display: block;
+    margin: auto;
+}
+.modal-content form a {
+    width: 90%;
+}
+.modal-content form{
+    margin-top: 10%
+}
+}
+
+@media only screen and (min-width: 481px) and (max-width: 768px){
+    .modal-content{
+    width: 70%;
+    height: 30%;
+}
+.modal-content h2{
+    margin-top: 9%
+}
+.modal-content form input{
+    width: 80%;
+    height: 20px;
+    display: block;
+    margin: auto;
+}
+.modal-content form a {
+    width: 80%;
+    height: 18%
+}
+.modal-content form{
+    margin-top: 5%
+}
+}
+@media only screen and (min-width: 769px) and (max-width: 1024px){
+    .modal-content{
+    width: 60%;
+    height: 25%;
+}
+.modal-content h2{
+    margin-top: 9%
+}
+.modal-content form input{
+    width: 60%;
+    height: 30px;
+    display: block;
+    margin: auto;
+}
+.modal-content form a {
+    width: 60%;
+    height: 30px;
+    margin-top: 20px
+}
+.modal-content form{
+    margin-top: 5%
+}
+}
+@media only screen and (min-width: 1025px) and (max-width: 1500px){
+    .modal-content{
+    width: 60%;
+    height: 60%;
+}
+.modal-content h2{
+    margin-top: 9%
+}
+.modal-content form input{
+    width: 60%;
+    height: 30px;
+    display: block;
+    margin: auto;
+}
+.modal-content form a {
+    width: 60%;
+    height: 30px;
+    margin-top: 20px;
+    font-size: 1.4rem
+}
+.modal-content form{
+    margin-top: 5%
+}
+}
+/* end of login modal */
